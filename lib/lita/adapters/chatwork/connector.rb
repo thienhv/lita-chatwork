@@ -88,6 +88,8 @@ module Lita
             @me = ChatWork::Me.get
             @robot.name = @me["name"]
             @robot.mention_name = "[To:#{@me["account_id"]}]"
+          rescue => e
+            @logger.error "tintrinh: #{e.message}"
           end
         end
 
